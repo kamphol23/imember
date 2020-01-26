@@ -3,12 +3,13 @@ import './App.css';
 import { BrowserRouter as Router, Route,Link } from "react-router-dom";
 import LandingPage from './landingPage/Landingpage';
 import CharacterSelaction from './characterSelaction/CharacterSelaction';
-
 class App extends Component{
 
   state = {
-  display: true
+  display: true,
+
   }
+
 
 
 render(){

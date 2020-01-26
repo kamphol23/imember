@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import LogInData from './LogInData';
 
 const defaultState = {
-  userName:' ',
-  password:'',
+  userName:'',
+  password:' ',
   unserNameError:'',
   passwordError:''
 }
@@ -70,7 +70,7 @@ ToNextScen = () => {
         <input type="password" placeholder="Password" value={this.state.password} onChange={e => this.setState({password: e.target.value})}/>
           <p >{this.state.passwordError}</p>
           <br/>
-            <LogInData userName={this.state.userName} eventHandler={this.sumitLogIn}/>
+            <LogInData userName={this.state.password} eventHandler={this.sumitLogIn} isUserNameTrue={this.state.userName}/>
 
 
       </div>
