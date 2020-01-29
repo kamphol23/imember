@@ -1,0 +1,12 @@
+.app{
+  display: flex;
+  justify-content: center;
+}
+
+.bajs{
+  display: flex;
+}
+p{
+  margin: 10px;
+
+}

@@ -50,7 +50,6 @@ class CreateCharacter extends Component{
 
     if(!this.props.isVisibel){
       createNewHero = null;
-
     }
     return(
       <div >
