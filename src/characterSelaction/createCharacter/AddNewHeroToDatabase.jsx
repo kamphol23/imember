@@ -8,21 +8,21 @@ class  AddNewHeroToDatabase extends Component {
 handleAdd = e => {
   console.log('done');
 
-		let obj = { name:this.props.newHeroname,
+		let obj = { heroName:this.props.newHeroname,
       race: this.props.heroRace,
       wapon: this.props.heroWapon
      };
+      let db = firebase.firestore();
 
-
-		const collectionRef = firebase.firestore().collection('JHKmw250cal');
-		collectionRef.add(obj)
+     db.collection('JHKmw250cal').doc(this.props.newHeroname).set({'heroName':this.props.newHeroname,
+   'race':this.props.heroRace, 'wapon': this.props.heroWapon })
 		.then(() => {
 
 		})
 		.catch(error => {
-
+      console.log('kunde inte lägga till en ny karäktar');
 		})
-    // this.setState({defaultState});
+
 	}
 
 
