@@ -25,6 +25,8 @@ class CreateCharacter extends Component{
   }
 
 
+
+
   render(){
 
 
@@ -38,7 +40,10 @@ class CreateCharacter extends Component{
       onChange={e => this.setState({newCharacterName: e.target.value})}
       value={this.state.newCharacterName}
      />
-
+     <AddNewHeroToDatabase newHeroname={this.state.newCharacterName}
+     heroRace={this.state.newCharacterRace} heroWapon={this.state.newCaharacterWapon}
+     {...this.props}
+     />
       </div>
     )
 
@@ -50,8 +55,7 @@ class CreateCharacter extends Component{
     return(
       <div >
       {createNewHero}
-      <AddNewHeroToDatabase newHeroname={this.state.newCharacterName}
-      heroRace={this.state.newCharacterRace} heroWapon={this.state.newCaharacterWapon}/>
+
       </div>
     )
   }

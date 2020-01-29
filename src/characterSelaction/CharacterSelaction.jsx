@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import CreateCharacter from './createCharacter/CreateCharacter';
-
+import ExistedHeros from './existedHero/ExistedHeros';
 class CharacterSelaction extends  Component{
   state = {
     isVisibel: false,
@@ -8,8 +8,13 @@ class CharacterSelaction extends  Component{
     userCollection:''
   }
 
-  eventHandler = () => {
-    this.setState({isVisibel:true});
+
+  isCreatecharacter = () => {
+    if(this.state.isVisibel === false){
+      this.setState({isVisibel:true});
+    }else {
+        this.setState({isVisibel:false});
+    }
   }
 
   render(){
@@ -17,8 +22,10 @@ class CharacterSelaction extends  Component{
     return(
       <div>
       <h1> Selact me pls </h1>
-      <button onClick={this.eventHandler }> New Hero </button>
-      <CreateCharacter isVisibel={this.state.isVisibel} />
+      <ExistedHeros/>
+      <button onClick={this.isCreatecharacter }> New Hero </button>
+      <CreateCharacter isVisibel={this.state.isVisibel} {...this.props}
+       isCreatecharacter={this.isCreatecharacter} />
       </div>
     )
   }

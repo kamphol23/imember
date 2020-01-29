@@ -32,7 +32,6 @@ if( this.state.collectionName !== ''){
     return(
       <div>
   <button onClick={this.eventHandler}>Log in</button>
-  <CharacterSelaction userCollection={this.state.collectionName}/>
       </div>
     )
   }
