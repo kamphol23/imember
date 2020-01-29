@@ -1,23 +1,23 @@
 import React, {Component} from 'react';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-
+import UserData from '../../UserData';
 class LogInData extends Component {
 state = {
   //userName are namnet på collectionet aka lösennordet.
   nameToDatabase:' ',
-  isEverytingRight: false,
   collectionName:' ' ,
   isUserNameTrue:'',
-  wrongPasswordOrName:''
+  wrongPasswordOrName:'',
+  nameToUserData:'',
+  eventchecker:false
 }
-
-
 
 
 setNameHandler = () => {
   //denna raden gör så att man inte fetcha data förens man klickar på knappen.
   this.setState({isUserNameTrue: this.props.isUserNameTrue});
+  this.setState({nameToUserData:this.props.userName});
 
     const db = firebase.firestore();
     let userRef = db.collection(this.props.userName);
@@ -26,44 +26,46 @@ setNameHandler = () => {
       .then(snapshot => {
         snapshot.forEach(doc => {
         const data = doc.data();
-      console.log('userName data',data.userName);
+      // console.log('userName data',data.userName);
         this.setState({collectionName: data.userName});
-
-
+          this.toNextScen();
         });
       })
       .catch(err => {
         console.log('Error ', err);
       });
 
-      if(this.state.collectionName){
-        this.toNextScen();
-      }
-
 }
 
-    toNextScen = () => {
-      if(this.state.isUserNameTrue !== this.state.collectionName){
+  toNextScen = () => {
+    if(this.state.isUserNameTrue === this.state.collectionName){
+      this.props.eventHandler();
+
+    }else{
         this.setState({wrongPasswordOrName: 'Wrong password or username'});
-      }else{
-          this.props.eventHandler();
-        }
       }
+    }
 
 
 
+eventHandler = () => {
+  this.setNameHandler();
 
+}
     render(){
-  if(this.state.collectionName !== ' '){
-    this.toNextScen();
-  }
+if(this.eventHandler){
+  if(this.state.eventchecker === true){
+  this.setState({eventchecker: false});
 
+}}
 
+  // console.log('name to user data', this.state.nameToUserData);
     return(
     <div>
     <p>{this.state.wrongPasswordOrName}</p>
-    <button onClick={this.setNameHandler}>Log in</button>
 
+    <UserData userCollection={this.props.userName}
+    logInBtn={this.eventHandler}/>
     </div>
   )}
 }

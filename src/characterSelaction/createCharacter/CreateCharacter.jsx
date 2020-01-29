@@ -9,6 +9,7 @@ class CreateCharacter extends Component{
   newCharacterName:'',
   newCaharacterWapon:'',
   newCharacterRace:'',
+  collectionName:'',
 };
 
 
@@ -26,8 +27,8 @@ class CreateCharacter extends Component{
 
   render(){
 
-console.log("Race: ", this.state.newCharacterRace);
-console.log("name: ", this.state.newHeroname);
+
+
 
     let createNewHero = (
       <div>
@@ -44,11 +45,13 @@ console.log("name: ", this.state.newHeroname);
 
     if(!this.props.isVisibel){
       createNewHero = null;
+
     }
     return(
       <div >
       {createNewHero}
-      <AddNewHeroToDatabase newHeroname={this.state.newCharacterName} />
+      <AddNewHeroToDatabase newHeroname={this.state.newCharacterName}
+      heroRace={this.state.newCharacterRace} heroWapon={this.state.newCaharacterWapon}/>
       </div>
     )
   }

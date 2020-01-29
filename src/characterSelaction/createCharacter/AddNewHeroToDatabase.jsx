@@ -5,14 +5,16 @@ import 'firebase/firestore';
 
 class  AddNewHeroToDatabase extends Component {
 
-
-
 handleAdd = e => {
   console.log('done');
 
 		let obj = { name:this.props.newHeroname,
+      race: this.props.heroRace,
+      wapon: this.props.heroWapon
      };
-		const collectionRef = firebase.firestore().collection('newHero');
+
+
+		const collectionRef = firebase.firestore().collection('JHKmw250cal');
 		collectionRef.add(obj)
 		.then(() => {
 
@@ -23,12 +25,13 @@ handleAdd = e => {
     // this.setState({defaultState});
 	}
 
-  render() {
 
+  render() {
 
 		return (
 			<div>
 <button onClick={this.handleAdd}> add hero </button>
+
 			</div>
 		)
 	}

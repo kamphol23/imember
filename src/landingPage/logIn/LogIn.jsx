@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import LogInData from './LogInData';
-
 const defaultState = {
   userName:'',
   password:' ',
   unserNameError:'',
-  passwordError:''
+  passwordError:'',
+
 }
 
 
@@ -49,7 +49,7 @@ ToNextScen = () => {
   sumitLogIn = () =>{
    const isValid = this.validation();
    if(isValid) {
-     this.setState({defaultState});
+     // this.setState({defaultState});
      this.ToNextScen();
      console.log('In loggad');
 
@@ -60,18 +60,16 @@ ToNextScen = () => {
 
     render(){
 
-
   let logIn = (
       <div>
       <p> Log in</p>
       <input type="name" value={this.state.userName} placeholder="Username" onChange={e => this.setState({userName: e.target.value})}/>
        <p >{this.state.userNameError}</p>
        <br/>
-        <input type="password" placeholder="Password" value={this.state.password} onChange={e => this.setState({password: e.target.value})}/>
-          <p >{this.state.passwordError}</p>
-          <br/>
-            <LogInData userName={this.state.password} eventHandler={this.sumitLogIn} isUserNameTrue={this.state.userName}/>
-
+      <input type="password" placeholder="Password" value={this.state.password} onChange={e => this.setState({password: e.target.value})}/>
+        <p >{this.state.passwordError}</p>
+        <br/>
+        <LogInData userName={this.state.password} eventHandler={this.sumitLogIn} isUserNameTrue={this.state.userName}/>
 
       </div>
       );

@@ -5,14 +5,20 @@ class CharacterSelaction extends  Component{
   state = {
     isVisibel: false,
     amountOfHeros:0,
-
+    userCollection:''
   }
+
+  eventHandler = () => {
+    this.setState({isVisibel:true});
+  }
+
   render(){
+
     return(
       <div>
       <h1> Selact me pls </h1>
-      <CreateCharacter isVisibel={this.state.isVisibel}/>
-      <button onClick={(e) => this.setState({isVisibel:true})}> New Hero </button>
+      <button onClick={this.eventHandler }> New Hero </button>
+      <CreateCharacter isVisibel={this.state.isVisibel} />
       </div>
     )
   }
