@@ -3,10 +3,11 @@
   justify-content: center;
 }
 
-.bajs{
+#heroName{
   display: flex;
 }
-p{
-  margin: 10px;
 
+#heroName  div {
+  margin-left: 20px;
+  margin-right: 20px;
 }
