@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import LogIn from './logIn/LogIn';
 import SignUp from './signUp/SingUp';
-
-
 class LandingPage extends Component{
 
   state = {
@@ -13,6 +11,7 @@ class LandingPage extends Component{
 
 
     render(){
+console.log(this.props);
 
       return(
         <div>

@@ -59,6 +59,7 @@ ToNextScen = () => {
 
 
     render(){
+console.log(this.props);
 
   let logIn = (
       <div>
@@ -78,6 +79,7 @@ ToNextScen = () => {
   if(! this.props.dislayStatus){
     logIn = null;
   }
+
       return(
         <div>
         {logIn}
