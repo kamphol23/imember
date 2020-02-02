@@ -4,7 +4,7 @@ import 'firebase/firestore';
 
 
 class  AddNewHeroToDatabase extends Component {
-
+  
 handleAdd = e => {
   console.log('done');
       let db = firebase.firestore();

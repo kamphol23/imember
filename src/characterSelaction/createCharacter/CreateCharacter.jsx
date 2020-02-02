@@ -3,14 +3,14 @@ import './CreateCharacter.css';
 import Wapon from './newCaharacterWapon/NewCaharacterWapon';
 import HeroInfoAndRace from './heroInfoAndRace/HeroInfoAndRace';
 import AddNewHeroToDatabase from './AddNewHeroToDatabase';
-class CreateCharacter extends Component{
 
-    state = {
+class CreateCharacter extends Component{
+  state = {
   newCharacterName:'',
   newCaharacterWapon:'',
   newCharacterRace:'',
   collectionName:'',
-};
+  };
 
 
 
@@ -23,7 +23,6 @@ class CreateCharacter extends Component{
 
   this.setState({newCaharacterWapon: selectedWapon})
   }
-
 
 
 

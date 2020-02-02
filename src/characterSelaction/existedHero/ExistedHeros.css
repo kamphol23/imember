@@ -10,4 +10,17 @@
 #heroName  div {
   margin-left: 20px;
   margin-right: 20px;
+  border: double 10px #D40402;
+  height: 400px;
+  width: 200px;
+}
+
+#heroName button {
+  border: solid 2px #333333;
+  width: 150px;
+
+}
+
+.deleteButton{
+  border-radius: 50px;
 }

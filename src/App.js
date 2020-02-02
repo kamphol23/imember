@@ -14,16 +14,7 @@ class App extends Component{
 
 
 render(){
-
-  let buttonToNextscen = (
-
-      <button className="welcome" onClick={(e) => this.setState({display: false,loggedInStatus: true })}><Link to="/LandingPage"> Welcome!</Link></button>
-    );
-
-  if(! this.state.display){
-    buttonToNextscen = null;
-  }
-
+// exact render={() =>( this.state.loggedInStatus ? (<CharacterSelaction/>) : (<Redirect to=""/>) )}
   return (
     <Router>
     <div className="App">
@@ -33,7 +24,7 @@ render(){
         return (  <button className="welcome" onClick={(e) => this.setState({display: false,loggedInStatus: true })}><Link to="/LandingPage"> Welcome!</Link></button>)
       }
     } />
-    <Route  path="/CharacterSelaction" exact render={() =>( this.state.loggedInStatus ? (<CharacterSelaction/>) : (<Redirect to=""/>) )}/>
+    <Route  path="/CharacterSelaction" component={CharacterSelaction} />
     <Route path="/LandingPage"exact  component={LandingPage} loggedInStatus={this.state.loggedInStatus} />
     </div>
     </Router>

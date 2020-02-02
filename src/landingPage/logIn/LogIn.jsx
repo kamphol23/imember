@@ -49,7 +49,7 @@ ToNextScen = () => {
   sumitLogIn = () =>{
    const isValid = this.validation();
    if(isValid) {
-     // this.setState({defaultState});
+     this.setState({defaultState});
      this.ToNextScen();
      console.log('In loggad');
 
@@ -59,7 +59,6 @@ ToNextScen = () => {
 
 
     render(){
-console.log(this.props);
 
   let logIn = (
       <div>

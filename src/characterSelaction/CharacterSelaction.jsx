@@ -21,7 +21,7 @@ class CharacterSelaction extends  Component{
     return(
       <div>
       <h1> Selact me pls </h1>
-      <ExistedHeros/>
+      <ExistedHeros areCreateCharacterVisibel={this.state.isVisibel}/>
       <CreateCharacter isVisibel={this.state.isVisibel} {...this.props}
        isCreatecharacter={this.isCreatecharacter} />
        <button onClick={this.isCreatecharacter }> New Hero </button>
