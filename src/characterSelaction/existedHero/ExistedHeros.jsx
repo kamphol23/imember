@@ -2,20 +2,37 @@ import React, {Component} from 'react';
 import './ExistedHeros.css';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-
+import UserData from '../../UserData';
 class ExistedHeros extends Component{
 
+state = {
+  selectedHero:''
+}
 
+toNextScen = () =>{
+    this.props.history.push('/Hub');
+}
+
+shouldComponentUpdate(){
+  if(this.toNextScen){
+    return false
+  }
+}
 render(){
-console.log(this.props);
-  const deleteHero = (heroId) =>{
-    console.log(heroId);
+
+  const setSelectedHeroNameAndNextScen = (heroName) =>{
+      this.setState({selectedHero: heroName})
+      this.toNextScen();
+  }
+
+const deleteHero = (heroId) =>{
   let heroName = document.getElementById('heroName');
   let div = document.getElementById(heroId);
+  console.log('Deleted : ', heroId);
+
   heroName.removeChild(div)
   firebase.firestore().collection('JHKmw250cal').doc(heroId).delete()
-
-  }
+}
 
 const db = firebase.firestore();
  db.collection('JHKmw250cal').get().then((snapshot) => {
@@ -27,8 +44,6 @@ const db = firebase.firestore();
     })
   })
 
-
-
 function appendingHeroinfo(doc){
   let heroName = document.getElementById('heroName');
   let div = document.createElement('div');
@@ -39,6 +54,8 @@ function appendingHeroinfo(doc){
   div.setAttribute('id', doc.id);
   deleteButton.setAttribute('onClick', 'this.deleteHero(doc.id);');
   deleteButton.onclick = function() {deleteHero(doc.id);};
+  playButton.setAttribute('onClick', 'this.setSelectedHeroNameAndNextScen(doc.id);');
+  playButton.onclick = function() {setSelectedHeroNameAndNextScen(doc.id);};
 
   p.textContent = doc.data().heroName;
   playButton.textContent = 'Play';
@@ -51,14 +68,14 @@ function appendingHeroinfo(doc){
   heroName.appendChild(div);
 
 }
-
+console.log(this.props);
     return(
       <div className="app">
-      <div id="heroName" >
-      </div>
+      <div id="heroName" ></div>
+      <UserData heroName={this.state.selectedHero}/>
       </div>
     )
   }
-  }
+}
 
 export default ExistedHeros;

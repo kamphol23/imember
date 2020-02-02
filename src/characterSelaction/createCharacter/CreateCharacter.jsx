@@ -28,7 +28,10 @@ class CreateCharacter extends Component{
 
   render(){
 
-
+    let newHero = (  <button onClick={this.props.isCreatecharacter }> New Hero </button>);
+    if(this.props.isVisibel === true){
+      newHero = null;
+    }
 
 
     let createNewHero = (
@@ -53,6 +56,7 @@ class CreateCharacter extends Component{
     return(
       <div >
       {createNewHero}
+      {newHero}
 
       </div>
     )
