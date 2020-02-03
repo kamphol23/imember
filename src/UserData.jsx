@@ -13,16 +13,13 @@ setCollectionName = () => {
 
 }
 
-eventHandler = () => {
-  this.setCollectionName();
-  this.props.logInBtn();
-}
+
   render(){
 
 
     return(
       <div>
-  <button onClick={this.eventHandler}>Log in</button>
+
       </div>
     )
   }

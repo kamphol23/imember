@@ -20,21 +20,16 @@ handleAdd = e => {
 
 	}
 
-  backToSelection = () => {
-    this.props.history.push('/CharacterSelaction')
-    console.log('jag sticker hem');
-  }
 
 eventHandler = () => {
   this.handleAdd();
-  this.backToSelection();
   this.props.isCreatecharacter();
 }
   render() {
-console.log(this.props);
+
 		return (
 			<div>
-<button onClick={this.eventHandler}> add hero </button>
+      <button onClick={this.eventHandler}> add hero </button>
 
 			</div>
 		)

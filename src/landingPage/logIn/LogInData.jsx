@@ -64,8 +64,7 @@ if(this.eventHandler){
     <div>
     <p>{this.state.wrongPasswordOrName}</p>
 
-    <UserData userCollection={this.props.userName}
-    logInBtn={this.eventHandler}/>
+    <button onClick={this.eventHandler}> Log in </button>
     </div>
   )}
 }

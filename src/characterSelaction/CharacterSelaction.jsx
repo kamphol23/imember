@@ -17,15 +17,15 @@ class CharacterSelaction extends  Component{
     }
   }
 
+
   render(){
 
     return(
       <div>
       <h1> Selact me pls </h1>
-      <ExistedHeros/>
+      <ExistedHeros areCreateCharacterVisibel={this.state.isVisibel} {...this.props}/>
       <CreateCharacter isVisibel={this.state.isVisibel} {...this.props}
        isCreatecharacter={this.isCreatecharacter} />
-       <button onClick={this.isCreatecharacter }> New Hero </button>
       </div>
     )
   }
