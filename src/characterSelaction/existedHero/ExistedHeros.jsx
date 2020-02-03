@@ -2,27 +2,22 @@ import React, {Component} from 'react';
 import './ExistedHeros.css';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-import UserData from '../../UserData';
+import Hub from '../../hub/Hub'
 class ExistedHeros extends Component{
 
 state = {
-  selectedHero:''
+  selectedHero:'',
+  tureOrFalse:true
 }
 
-toNextScen = () =>{
-    this.props.history.push('/Hub');
-}
 
-shouldComponentUpdate(){
-  if(this.toNextScen){
-    return false
-  }
-}
 render(){
+let trueOrFalse = this.state.selectedHero;
 
-  const setSelectedHeroNameAndNextScen = (heroName) =>{
-      this.setState({selectedHero: heroName})
-      this.toNextScen();
+const setSelectedHeroNameAndNextScen = (heroName) =>{
+      this.setState({selectedHero: heroName});
+      this.setState({tureOrFalse: false});
+      this.props.history.push('/Hub');
   }
 
 const deleteHero = (heroId) =>{
@@ -44,6 +39,8 @@ const db = firebase.firestore();
     })
   })
 
+
+
 function appendingHeroinfo(doc){
   let heroName = document.getElementById('heroName');
   let div = document.createElement('div');
@@ -61,18 +58,26 @@ function appendingHeroinfo(doc){
   playButton.textContent = 'Play';
   deleteButton.textContent = 'Delete';
 
-
+  if(trueOrFalse === ''){
   div.appendChild(p);
   div.appendChild(playButton);
   div.appendChild(deleteButton);
   heroName.appendChild(div);
-
 }
-console.log(this.props);
+}
+
+// const test = (name) =>{
+//   () => this.props.heroName()
+// }
+// let test = (<Hub heroName={this.state.selectedHero}/>)
+// if(trueOrFalse === ''){
+//   test = null
+// }
     return(
       <div className="app">
       <div id="heroName" ></div>
-      <UserData heroName={this.state.selectedHero}/>
+      <Hub heroName={this.state.selectedHero}/>
+
       </div>
     )
   }

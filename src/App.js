@@ -28,7 +28,7 @@ render(){
     } />
     <Route  path="/CharacterSelaction" component={CharacterSelaction} />
     <Route path="/LandingPage"exact  component={LandingPage} loggedInStatus={this.state.loggedInStatus} />
-    <Route  path="/ExistedHeros" component={ExistedHeros} />
+    <Route  path="/ExistedHeros" component={ExistedHeros}/>
     <Route  path="/Hub" component={Hub} />
     </div>
     </Router>
