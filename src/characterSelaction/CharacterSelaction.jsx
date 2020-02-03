@@ -10,6 +10,7 @@ class CharacterSelaction extends  Component{
 
   isCreatecharacter = () => {
     if(this.state.isVisibel === false){
+
       this.setState({isVisibel:true});
     }else {
         this.setState({isVisibel:false});
