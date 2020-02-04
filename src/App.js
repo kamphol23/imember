@@ -5,6 +5,7 @@ import LandingPage from './landingPage/Landingpage';
 import CharacterSelaction from './characterSelaction/CharacterSelaction';
 import ExistedHeros from './characterSelaction/existedHero/ExistedHeros';
 import Hub from './hub/Hub';
+import  ToHub from './characterSelaction/existedHero/ToHub'
 import { Redirect } from "react-router-dom";
 class App extends Component{
 
@@ -30,6 +31,7 @@ render(){
     <Route path="/LandingPage"exact  component={LandingPage} loggedInStatus={this.state.loggedInStatus} />
     <Route  path="/ExistedHeros" component={ExistedHeros}/>
     <Route  path="/Hub" component={Hub} />
+    <Route path="/ToHub" component={ToHub} />
     </div>
     </Router>
   );
