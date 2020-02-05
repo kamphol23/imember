@@ -5,7 +5,7 @@ import LandingPage from './landingPage/Landingpage';
 import CharacterSelaction from './characterSelaction/CharacterSelaction';
 import ExistedHeros from './characterSelaction/existedHero/ExistedHeros';
 import Hub from './hub/Hub';
-import Inventory from './hub/Inventory';
+import Inventory from './hub/inventory/Inventory';
 import  ToHub from './characterSelaction/existedHero/ToHub'
 import UserData from './UserData'
 import { Redirect } from "react-router-dom";

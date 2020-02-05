@@ -26,6 +26,7 @@ console.log(this.props);
       state:{
         heroName:this.state.heroName
       }}}> inventory </Link></button>
+      <button><Link to={'/ScoreBoard'}>ScoreBoard</Link></button>
       </div>
     )
   }

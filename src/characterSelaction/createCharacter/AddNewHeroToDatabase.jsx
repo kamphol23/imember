@@ -10,7 +10,7 @@ handleAdd = e => {
       let db = firebase.firestore();
 
      db.collection('JHKmw250cal').doc(this.props.newHeroname).set({'heroName':this.props.newHeroname,
-   'race':this.props.heroRace, 'wapon': this.props.heroWapon, 'inventory':[]})
+   'race':this.props.heroRace, 'wapon': this.props.heroWapon, 'inventory': ['HealingPotion', 'ManaPotion'], 'lvel': 0, 'score' : 100})
 		.then(() => {
 
 		})
