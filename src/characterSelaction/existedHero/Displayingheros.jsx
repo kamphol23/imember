@@ -6,7 +6,7 @@ let list = null;
 
   if(props.heroNameList){
     list = props.heroNameList.map( heroName =>(
-          <DeleteHero key={heroName.id} heroName={heroName} />
+          <DeleteHero key={heroName.id} heroName={heroName} toNextscen={props.toNextscen}/>
     ));
    }
   return(

@@ -2,7 +2,8 @@ import React, {useState, useEffect}  from 'react';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import Displayingheros from './Displayingheros';
-const ExistedHeros= () => {
+
+const ExistedHeros= (props) => {
 const[heroNameData, setHeroNameData] = useState(null)
 
 useEffect (() =>{
@@ -25,7 +26,7 @@ useEffect (() =>{
     return(
       <div id="app">
       <div id="heroName" ></div>
-      <Displayingheros heroNameList={heroNameData}/>
+      <Displayingheros heroNameList={heroNameData} />
       </div>
     )
 }
