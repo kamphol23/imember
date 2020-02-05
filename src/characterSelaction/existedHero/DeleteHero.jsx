@@ -11,9 +11,9 @@ const DeleteHero = ({heroName}) =>{
 
 
   return(
-    <div>
+    <div className={heroName.id}>
     <p> {theNames }</p>
-    <ToHub/>
+    <ToHub heroId={heroName.id}/>
     <button onClick={deleteHeros}> Delete </button>
     </div>
   )

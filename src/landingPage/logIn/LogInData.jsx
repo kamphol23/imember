@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-import UserData from '../../UserData';
 class LogInData extends Component {
 state = {
   //userName are namnet på collectionet aka lösennordet.

@@ -1,8 +1,6 @@
 import React, {useState, useEffect}  from 'react';
-import './ExistedHeros.css';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-import Hub from '../../hub/Hub'
 import Displayingheros from './Displayingheros';
 const ExistedHeros= () => {
 const[heroNameData, setHeroNameData] = useState(null)
@@ -22,15 +20,12 @@ useEffect (() =>{
     })
     setHeroNameData(list)
   })
-}, [heroNameData])
+}, [])
 
-const toNextScen = () =>{
-  this.props.history.push('/Hub')
-}
     return(
       <div id="app">
       <div id="heroName" ></div>
-      <Displayingheros heroNameList={heroNameData} toHub={toNextScen}/>
+      <Displayingheros heroNameList={heroNameData}/>
       </div>
     )
 }

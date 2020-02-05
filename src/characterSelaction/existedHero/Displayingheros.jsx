@@ -1,8 +1,8 @@
 import React from 'react'
 import DeleteHero from './DeleteHero';
+import './ExistedHeros.css';
 const Displayingheros = (props) =>{
 let list = null;
-let toHub = (<button onClick={props.toHub}> play </button>);
 
   if(props.heroNameList){
     list = props.heroNameList.map( heroName =>(
@@ -11,7 +11,7 @@ let toHub = (<button onClick={props.toHub}> play </button>);
    }
   return(
     <div>
-    <div>{list}</div>
+    <div className="heroName">{list}</div>
     </div>
   )
 }

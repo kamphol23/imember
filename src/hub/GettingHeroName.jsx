@@ -11,7 +11,7 @@ setName = (name) => {
   render(){
     return(
       <div>
-      <ExistedHeros heroName={this.setName.bind(this)}/>
+        <button onClick={e => this.setState({heroName: this.props.heroId}) }>Play</button>
       </div>
     )
   }

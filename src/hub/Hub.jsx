@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link } from "react-router-dom";
 class Hub extends Component{
   state = {
     heroName:'',
@@ -8,19 +9,15 @@ class Hub extends Component{
       this.props.history.push('/CharacterSelaction');
   }
 
-
-
-
    render(){
-console.log(this.props.heroName);
+
+console.log(this.state.heroName);
     return(
       <div>
-      <h1> Hub </h1>
-      <p> Welcome back</p>
-      <button> Battle </button>
-      <button> Shop </button>
-      <button> inventory </button>
-      <button onClick={this.goBack}> Go back </button>
+
+      <button onClick={e => this.setState({heroName: this.props.heroId}) }>Play</button>
+
+
       </div>
     )
   }

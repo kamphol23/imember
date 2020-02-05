@@ -1,10 +1,11 @@
 import React from 'react'
-import {Link } from "react-router-dom";
-const ToHub = () =>{
+
+import Hub from '../../hub/Hub'
+const ToHub = (props) =>{
 
     return(
       <div>
-      <button><Link to="/Hub"> play</Link></button>
+      <Hub heroId={props.heroId}/>
       </div>
     )
   }
