@@ -12,6 +12,7 @@ query.get()
           score.forEach(doc => {
               data = doc.data();
               setScoreData(data.score)
+              console.log(data.score);
           });
         })
   return(
