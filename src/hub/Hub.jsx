@@ -27,6 +27,7 @@ console.log(this.props);
         heroName:this.state.heroName
       }}}> inventory </Link></button>
       <button ><Link to={{pathname:'/ScoreBoard', state:{ heroName:this.state.heroName }}}> ScoreBoard </Link></button>
+      <button ><Link to={{pathname:'/SelectScren', state:{ heroName:this.state.heroName }}}> Battle </Link></button>
       </div>
     )
   }

@@ -1,6 +1,7 @@
 import React, {Component,} from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route,Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import LandingPage from './landingPage/Landingpage';
 import CharacterSelaction from './characterSelaction/CharacterSelaction';
 import ExistedHeros from './characterSelaction/existedHero/ExistedHeros';
@@ -9,7 +10,8 @@ import ScoreBoard from './hub/scoreBoard/ScoreBoard';
 import Inventory from './hub/inventory/Inventory';
 import  ToHub from './characterSelaction/existedHero/ToHub'
 import UserData from './UserData'
-import { Redirect } from "react-router-dom";
+import SelectScren from './hub/battle/SelectScren';
+import SelectArea from './hub/battle/pvpBattle/SelectArea';
 class App extends Component{
 
   state = {
@@ -41,6 +43,8 @@ render(){
     <Route  path="/Hub" component={Hub} />
     <Route  path="/Inventory" component={Inventory} />
     <Route  path="/ScoreBoard" component={ScoreBoard} />
+    <Route  path="/SelectScren" component={SelectScren} />
+    <Route  path="/SelectArea" component={SelectArea} />
     </div>
     </Router>
   );
