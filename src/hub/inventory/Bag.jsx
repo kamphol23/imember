@@ -1,12 +1,12 @@
 import React from 'react'
-import DeleteAndUseItems from './DeleteAndUseItems'
+import DisplayItems from './DisplayItems'
 const Bag = (props) =>{
 let list = null;
 
 
     if(props.bagItems){
       list = props.bagItems.map( bagItems =>(
-            <DeleteAndUseItems key={bagItems} bagItems={bagItems} />
+            <DisplayItems key={bagItems} bagItems={bagItems} />
       ))
     }
   return(

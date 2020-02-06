@@ -2,7 +2,7 @@ import React from 'react'
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
-const DeleteAndUseItems = (props) =>{
+const DisplayItems = (props) =>{
   let items = props.bagItems
   return(
     <div >
@@ -10,4 +10,4 @@ const DeleteAndUseItems = (props) =>{
     </div>
   )
 }
-export default DeleteAndUseItems;
+export default DisplayItems;
