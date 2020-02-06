@@ -8,7 +8,8 @@ const[heroNameData, setHeroNameData] = useState(null)
 
 useEffect (() =>{
   const db = firebase.firestore();
-   db.collection('JHKmw250cal').get().then((snapshot) => {
+  let unsub = db.collection('JHKmw250cal').onSnapshot((snapshot) => {
+    console.log('ONSNAPSHOT');
      let list = [];
      snapshot.docs.forEach(doc =>{
      if(doc.data().heroName !== undefined ){
@@ -21,8 +22,9 @@ useEffect (() =>{
     })
     setHeroNameData(list)
   })
+  return unsub;
 }, [])
-
+console.log(heroNameData);
     return(
       <div id="app">
       <div id="heroName" ></div>

@@ -5,6 +5,7 @@ import LandingPage from './landingPage/Landingpage';
 import CharacterSelaction from './characterSelaction/CharacterSelaction';
 import ExistedHeros from './characterSelaction/existedHero/ExistedHeros';
 import Hub from './hub/Hub';
+import ScoreBoard from './hub/ScoreBoard';
 import Inventory from './hub/inventory/Inventory';
 import  ToHub from './characterSelaction/existedHero/ToHub'
 import UserData from './UserData'
@@ -39,6 +40,7 @@ render(){
     <Route path="/UserData" component={UserData} />
     <Route  path="/Hub" component={Hub} />
     <Route  path="/Inventory" component={Inventory} />
+    <Route  path="/ScoreBoard" component={ScoreBoard} />
     </div>
     </Router>
   );
