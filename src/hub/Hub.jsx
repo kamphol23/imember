@@ -15,8 +15,6 @@ componentDidMount () {
 
 
    render(){
-console.log(this.props);
-
   return(
       <div>
 
