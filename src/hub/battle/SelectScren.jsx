@@ -5,8 +5,8 @@ const SelectScren = (props) =>{
   console.log(heroName);
   return(
     <div>
-    <button> Arena pvp </button>
-    <button ><Link to={{pathname:'/SelectArea',state:{heroName:heroName}}}> Adventure time </Link></button>
+    <button ><Link to={{pathname:'/BattleScren',state:{heroName:heroName}}}>Adventure time</Link></button>
+    <button ><Link to={{pathname:'/SelectArea',state:{heroName:heroName}}}> Arena pvp  </Link></button>
     <button ><Link to={{pathname:'/Hub',state:{heroName:heroName}}}> Back </Link></button>
 
     </div>

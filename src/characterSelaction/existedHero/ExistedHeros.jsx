@@ -24,7 +24,7 @@ useEffect (() =>{
   })
   return unsub;
 }, [])
-console.log(heroNameData);
+
     return(
       <div id="app">
       <div id="heroName" ></div>

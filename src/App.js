@@ -12,6 +12,7 @@ import  ToHub from './characterSelaction/existedHero/ToHub'
 import UserData from './UserData'
 import SelectScren from './hub/battle/SelectScren';
 import SelectArea from './hub/battle/pvpBattle/SelectArea';
+import BattleScren from './hub/battle/pve/BattleScren';
 class App extends Component{
 
   state = {
@@ -45,6 +46,7 @@ render(){
     <Route  path="/ScoreBoard" component={ScoreBoard} />
     <Route  path="/SelectScren" component={SelectScren} />
     <Route  path="/SelectArea" component={SelectArea} />
+    <Route  path="/BattleScren" component={BattleScren} />
     </div>
     </Router>
   );

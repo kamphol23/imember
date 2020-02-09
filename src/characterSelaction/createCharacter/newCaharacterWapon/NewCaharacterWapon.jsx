@@ -6,18 +6,19 @@ class NewCaharacterWapon extends Component {
     starterWapon: ['Staff', 'Long Sword', 'broken coocking rod', 'Disco stick'],
     waponAbilitis:[
     {
-      Staff:['Basic attack', 'Fire ball', 'pyroblast']
+      Staff:{abilityOne: 'Basic attack', abilityTwo :'Fire ball', abilityThree : 'pyroblast'}
     },
     {
-      LongSword:['Basic attack', 'Heroic strike', 'Mortal strike']
+      LongSword:{abilityOne: 'Basic attack', abilityTwo: 'Heroic strike', abilityThree: 'Mortal strike'}
     },
     {
-      BrokenCoockingRod:['Basic attack', 'Flying meatball', 'Mom spaghetti']
+      BrokenCoockingRod:{abilityOne: 'Basic attack', abilityTwo:'Flying meatball', abilityThree: 'Mom spaghetti'}
     },
     {
-      DiscoStick:['Basic attack','Last order', 'Saturday night fever']
+      DiscoStick:{abilityOne: 'Basic attack', abilityTwo :'Last order', abilityThree :'Saturday night fever'}
     }],
     waponNr: 0,
+
   }
 
   componentDidMount(){
@@ -44,19 +45,17 @@ class NewCaharacterWapon extends Component {
     }
   }
   chosenWaponNext = () => {
-
-    this.props.chosenWapon(this.state.starterWapon[this.state.waponNr +1]);
+    this.props.nameOfTheWapon(this.state.starterWapon[this.state.waponNr +1])
     if(this.state.waponNr + 1 === 4){
-      this.props.chosenWapon('Staff');
+      this.props.nameOfTheWapon('staff');
     }
     console.log('wapon index: ', this.state.waponNr);
   }
 
   chosenWaponPrev = () => {
-
-    this.props.chosenWapon(this.state.starterWapon[this.state.waponNr -1]);
+    this.props.nameOfTheWapon(this.state.starterWapon[this.state.waponNr -1])
     if(this.state.waponNr  -1 === -1){
-      this.props.chosenWapon('DiscoStick');
+      this.props.nameOfTheWapon('Disco stick')
     }
 
   }
@@ -73,14 +72,13 @@ class NewCaharacterWapon extends Component {
 
 
   render(){
-
     let staff = (
     <div>
-      <p> {this.state.waponAbilitis[0].Staff[0]}</p>
+      <p> {this.state.waponAbilitis[0].Staff.abilityOne}</p>
       <br/>
-      <p> {this.state.waponAbilitis[0].Staff[1]}</p>
+      <p> {this.state.waponAbilitis[0].Staff.abilityTwo}</p>
       <br/>
-      <p> {this.state.waponAbilitis[0].Staff[2]}</p>
+      <p> {this.state.waponAbilitis[0].Staff.abilityThree}</p>
 
 
     </div>
@@ -88,32 +86,32 @@ class NewCaharacterWapon extends Component {
 
     let longSword = (
     <div>
-      <p> {this.state.waponAbilitis[1].LongSword[0]}</p>
+      <p> {this.state.waponAbilitis[1].LongSword.abilityOne}</p>
       <br/>
-      <p> {this.state.waponAbilitis[1].LongSword[1]}</p>
+      <p> {this.state.waponAbilitis[1].LongSword.abilityTwo}</p>
       <br/>
-      <p> {this.state.waponAbilitis[1].LongSword[2]}</p>
+      <p> {this.state.waponAbilitis[1].LongSword.abilityThree}</p>
     </div>
     );
 
     let brokencoockingRod = (
       <div>
-        <p> {this.state.waponAbilitis[2].BrokenCoockingRod[0]}</p>
+        <p> {this.state.waponAbilitis[2].BrokenCoockingRod.abiabilityOne}</p>
         <br/>
-        <p> {this.state.waponAbilitis[2].BrokenCoockingRod[1]}</p>
+        <p> {this.state.waponAbilitis[2].BrokenCoockingRod.abilityTwo}</p>
         <br/>
-        <p> {this.state.waponAbilitis[2].BrokenCoockingRod[2]}</p>
+        <p> {this.state.waponAbilitis[2].BrokenCoockingRod.abilityThree}</p>
 
       </div>
     );
 
     let discoStick = (
       <div>
-        <p> {this.state.waponAbilitis[3].DiscoStick[0]}</p>
+        <p> {this.state.waponAbilitis[3].DiscoStick.abilityOne}</p>
         <br/>
-        <p> {this.state.waponAbilitis[3].DiscoStick[1]} </p>
+        <p> {this.state.waponAbilitis[3].DiscoStick.abilityTwo} </p>
         <br/>
-        <p> {this.state.waponAbilitis[3].DiscoStick[2]} </p>
+        <p> {this.state.waponAbilitis[3].DiscoStick.abilityThree} </p>
       </div>
     );
 

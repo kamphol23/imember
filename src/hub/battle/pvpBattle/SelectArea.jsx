@@ -1,11 +1,12 @@
 import React, {useState, useEffect}from 'react'
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import {Link } from "react-router-dom";
 import PushPlayerToDb from './PushPlayerToDb';
 const SelectArena = (props) =>{
   const[arenaData, setArenaData] = useState(null)
   const heroName = props.location.state.heroName;
-  let arenaId = null
+  let arenaPlayers = null
   let playersArray = null
     useEffect (() =>{
       const db = firebase.firestore();
@@ -25,13 +26,14 @@ const SelectArena = (props) =>{
     }, [])
 
     if(arenaData){
-      arenaId = arenaData.map( item =>( item.id));
+      arenaPlayers = arenaData.map( item =>( item.id));
       playersArray = arenaData.map( item =>( item.players));
     }
 
     return(
       <div>
-      <PushPlayerToDb playerName={heroName} arenas={arenaId} playersArray={playersArray}/>
+      <PushPlayerToDb playerName={heroName} arenas={arenaPlayers} playersArray={playersArray}/>
+      <button ><Link to={{pathname:'/SelectScren',state:{heroName:heroName}}}> Back </Link></button>
       </div>
     )
   }
