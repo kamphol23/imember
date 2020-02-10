@@ -32,7 +32,6 @@ class MonsterGenerator extends Component{
 			<li>A three : {this.state.normalmods[this.state.monsterNr].abilityThree}</li>
 			 </ul>
 
-			<button onClick={this.randomNr}> New monster </button>
 			</div>
 		)
 	}

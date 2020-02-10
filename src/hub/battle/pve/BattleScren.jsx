@@ -11,8 +11,8 @@ const BattleScren = (props) =>{
 	const [expToNextLvlData, setExpToNextLvlData] = useState(null);
 	const [waponData, setWaponData] = useState(null);
 	const [nameOfTheWaponData, setNameOfTheWaponData] = useState(null);
-	let wapon = null;
-	let waponList = null;
+	const [abilitisData, setAbilityData] = useState(null);
+
 	const db = firebase.firestore();
 	const player = db.collection('JHKmw250cal').doc(heroName);
   	useEffect (() =>{
@@ -23,18 +23,17 @@ const BattleScren = (props) =>{
 		setLvelData(data.lvel);
 		setWaponData(data.wapon);
 		setNameOfTheWaponData(data.nameOfTheWapon);
+		setAbilityData(data.waponAbilitis)
 	});
   }, [])
 
-console.log('wapon', waponData);
-
-
+console.log('wapon', abilitisData);
 	return(
 		<div>
 		<h2> PVE </h2>
 		<Player playerName={heroName} playerLevel={lvelData}
 		expToNextLvl={expToNextLvlData} wapon={waponData}/>
-		<MonsterGenerator playerLevel={lvelData} />
+		<MonsterGenerator playerLevel={lvelData} abilitisData={abilitisData}/>
     	<button ><Link to={{pathname:'/SelectScren',state:{heroName:heroName}}}> Back </Link></button>
 		</div>
 	)
