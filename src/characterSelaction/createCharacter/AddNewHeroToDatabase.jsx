@@ -9,26 +9,24 @@ class  AddNewHeroToDatabase extends Component {
          Staff:['Basic attack', 'Fire ball', 'pyroblast'] ,
          LongSword:['Basic attack','Heroic strike', 'Mortal strike'],
          BrokenCoockingRod:['Basic attack','Flying meatball','Momspaghetti'],
-         DiscoStick:['Basic attack', 'Last order', 'Saturday night fever']
+         DiscoStick:['Basic attack', 'Last order', 'Saturday night fever'],
+         waponDmg:[5, 15, 50]
      }
 
 handleAdd = e => {
-    let waponAbilitis =  this.state.Staff;
+    let waponAbilitis = null ;
   if(this.props.heroWapon === 'Staff'){
-      waponAbilitis = this.state.Staff;
+  let waponAbilitis = this.state.LongSword
   }
-  if(this.props.heroWapon === 'LongSword'){
-      waponAbilitis = this.state.LongSword;
+  else if(this.props.heroWapon === 'LongSword'){
+    let waponAbilitis = this.state.LongSword;
   }
-  if(this.props.heroWapon === 'BrokenCoockingRod'){
-      waponAbilitis = this.state.BrokenCoockingRod;
-  }
-  if(this.props.heroWapon === 'DiscoStick'){
-      waponAbilitis = this.state.DiscoStick;
-  }
+
+
       let db = firebase.firestore();
      db.collection('JHKmw250cal').doc(this.props.newHeroname).set({'heroName':this.props.newHeroname,
-   'race':this.props.heroRace, 'inventory': this.state.bag, 'lvel': 1, 'health': 75, 'score' : 0,'wapon': this.props.heroWapon, 'waponAbilitis' : waponAbilitis, 'expToNextLvl': 200 })
+   'race':this.props.heroRace, 'inventory': this.state.bag, 'lvel': 1, 'health': 75, 'score' : 0,'wapon': this.props.heroWapon,
+    'waponAbilitis' : waponAbilitis, 'waponDmg':this.state.waponDmg, 'expToNextLvl': 200 })
 		.then(() => {
 
 		})

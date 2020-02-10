@@ -96,7 +96,7 @@ class NewCaharacterWapon extends Component {
 
     let brokencoockingRod = (
       <div>
-        <p> {this.state.waponAbilitis[2].BrokenCoockingRod.abiabilityOne}</p>
+        <p> {this.state.waponAbilitis[2].BrokenCoockingRod.abilityOne}</p>
         <br/>
         <p> {this.state.waponAbilitis[2].BrokenCoockingRod.abilityTwo}</p>
         <br/>

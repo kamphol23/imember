@@ -1,7 +1,11 @@
 import React from 'react'
+import BattleCalcus from './../battleCalcus/BattleCalcus'
 const PlayerAbilitys = (props) =>{
+
 	return(
-		<div>
+		<div className={props.ability}>
+		<BattleCalcus ability={props.ability}/>
+
 		</div>
 	)
 }
