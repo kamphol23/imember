@@ -6,7 +6,9 @@ const DisplayItems = (props) =>{
   let items = props.bagItems
   return(
     <div >
-    <span> {items}</span>
+      <ul> {items.name}
+        <li> amount : {items.amout}</li>
+      </ul>
     </div>
   )
 }

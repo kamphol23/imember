@@ -5,7 +5,7 @@ import 'firebase/firestore';
 
 class  AddNewHeroToDatabase extends Component {
     state = {
-         bag: ['HealingPotion', 'ManaPotion'],
+         bag: [{name: 'Healing Potion', amout: 1 , cost: 10, sellPrice: 5 },{ name:'Mana Potion', amout: 1 , cost: 10, sellPrice: 5}],
          Staff:['Basic attack', 'Fire ball', 'pyroblast'] ,
          LongSword:['Basic attack','Heroic strike', 'Mortal strike'],
          BrokenCoockingRod:['Basic attack','Flying meatball','Momspaghetti'],
@@ -26,7 +26,7 @@ handleAdd = e => {
       let db = firebase.firestore();
      db.collection('JHKmw250cal').doc(this.props.newHeroname).set({'heroName':this.props.newHeroname,
    'race':this.props.heroRace, 'inventory': this.state.bag, 'lvel': 1, 'health': 75, 'score' : 0,'wapon': this.props.heroWapon,
-    'waponAbilitis' : waponAbilitis, 'waponDmg':this.state.waponDmg, 'expToNextLvl': 200 })
+    'waponAbilitis' : waponAbilitis, 'waponDmg':this.state.waponDmg, 'expToNextLvl': 200, 'gold': 0 })
 		.then(() => {
 
 		})

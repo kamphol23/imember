@@ -21,14 +21,14 @@ useEffect (() =>{
       setLvelData(data.lvel);
   });
 }, [])
-console.log(inventoryItemData);
+
     return(
       <div>
       <p> you inventory</p>
       <h3> you are level: {lvelData} </h3>
       <h3> your wapon: {waponData} </h3>
       <Bag bagItems={inventoryItemData}/>
-      <button ><Link to={{pathname:'/Hub',
+      <button onClick={e => setInventoryItemdata(null)}><Link to={{pathname:'/Hub',
       state:{
         heroName:heroName
       }}}> Back </Link></button>

@@ -6,7 +6,7 @@ let list = null;
 
     if(props.bagItems){
       list = props.bagItems.map( bagItems =>(
-            <DisplayItems key={bagItems} bagItems={bagItems} />
+            <DisplayItems key={bagItems.name} bagItems={bagItems} />
       ))
     }
   return(
