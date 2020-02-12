@@ -1,0 +1,12 @@
+.displaItems{
+  display: flex;
+  height: 500px;
+
+}
+
+.displaItems > div {
+  justify-content: center;
+  border: double 7px brown;
+  height: 250px;
+  width: 200px;
+}

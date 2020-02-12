@@ -1,5 +1,6 @@
 import React from 'react';
 import ShopItems from './ShopItems'
+import '../Shop.css'
 const DisplayingShopItems = (props) =>{
   let itemList = null;
 
@@ -10,7 +11,7 @@ const DisplayingShopItems = (props) =>{
      }
 
   return(
-    <div>
+    <div className="displaItems">
     {itemList}
     </div>
   )

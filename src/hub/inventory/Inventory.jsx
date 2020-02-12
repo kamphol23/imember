@@ -1,4 +1,4 @@
-import React, {useState, useEffect}  from 'react'
+import React, {useState, useEffect} from 'react'
 import Bag from './Bag';
 import firebase from 'firebase/app';
 import 'firebase/firestore';

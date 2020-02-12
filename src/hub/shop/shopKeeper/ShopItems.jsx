@@ -3,7 +3,7 @@ const ShopItems = (props) =>{
   const item = props.item;
   return(
     <div>
-      <h3>{item.name}</h3>
+      <h4>{item.name}</h4>
       <span> Cost : {item.cost}</span>
       <br/>
       <p>{item.onUseDisc}</p>
