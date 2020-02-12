@@ -5,7 +5,8 @@ import 'firebase/firestore';
 
 class  AddNewHeroToDatabase extends Component {
     state = {
-         bag: [{name: 'Healing Potion', amout: 1 , cost: 10, sellPrice: 5 },{ name:'Mana Potion', amout: 1 , cost: 10, sellPrice: 5}],
+         bag:{ healingPotion:{name: 'Healing Potion', amout: 1 , cost: 10, sellPrice: 5 },
+         manapotion: { name:'Mana Potion', amout: 1 , cost: 10, sellPrice: 5}},
          Staff:['Basic attack', 'Fire ball', 'pyroblast'] ,
          LongSword:['Basic attack','Heroic strike', 'Mortal strike'],
          BrokenCoockingRod:['Basic attack','Flying meatball','Momspaghetti'],

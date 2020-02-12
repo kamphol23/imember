@@ -6,12 +6,15 @@ const SellItems = (props) => {
   const playerName = props.heroName;
 
   const deleteItem = () => {
-    firebase.firestore().collection('JHKmw250cal').doc(playerName).delete({item})
-  }
+    firebase.firestore().collection('JHKmw250cal').doc(playerName).update({
+      inventory: this.FieldValue.arrayRemove(item.name)
+  })
+}
+  // const addGold = () =>{
+  // firebase.firestore().collection('JHKmw250cal').doc(playerName).set({ })
+  // }
 
-  const addGold = () =>{
-  firebase.firestore().collection('JHKmw250cal').doc(playerName).set({ })
-  }
+
   return(
     <div>
     <button onClick={deleteItem}> Sell </button>
