@@ -7,7 +7,7 @@ import AddNewHeroToDatabase from './AddNewHeroToDatabase';
 class CreateCharacter extends Component{
   state = {
   newCharacterName:'',
-  newCaharacterWapon:'',
+  waponAbilitis:'',
   newCharacterRace:'',
   collectionName:'',
   waponName:''
@@ -20,12 +20,8 @@ class CreateCharacter extends Component{
   this.setState({newCharacterRace: theRace})
   }
 
-  updateNewCheracterWapon = (selectedWapon) => {
 
-  this.setState({newCaharacterWapon: selectedWapon})
-  }
-
-  uptadeNewWaponName = (waponName) => {
+  waponName = (waponName) => {
       this.setState({waponName: waponName})
   }
 
@@ -40,15 +36,16 @@ class CreateCharacter extends Component{
     let createNewHero = (
       <div>
       <HeroInfoAndRace  chosenOne={this.updateNewCheracterRace.bind(this)}/>
-      <Wapon chosenWapon={this.updateNewCheracterWapon.bind(this)}
-        nameOfTheWapon={this.uptadeNewWaponName.bind(this)}/>
+      <Wapon
+        nameOfTheWapon={this.waponName.bind(this)}
+        />
       <input type="Name" placeholder="Character name"
       onChange={e => this.setState({newCharacterName: e.target.value})}
       value={this.state.newCharacterName}
      />
      <AddNewHeroToDatabase newHeroname={this.state.newCharacterName}
      heroRace={this.state.newCharacterRace} heroWapon={this.state.waponName}
-     {...this.props}
+     {...this.props} 
      />
       </div>
     )
