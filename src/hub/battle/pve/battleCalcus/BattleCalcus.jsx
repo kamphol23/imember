@@ -1,18 +1,10 @@
-import React from 'react'
-const BattleCalcus = (props) => {
-  const basicAttack = 'Basic attack';
-  const midDmg = ['Fire ball','Heroic strike', 'Flying meatball', 'Last order']
-  const  higthDmg =  ['pyroblast','Mortal strike','Saturday night fever']
+import React, {useState} from 'react'
+const BattleCalcus = (props) =>{
 
-
-  const test = () => {
-		console.log(props.ability)
-	}
-
-  return(
-    <div>
-    		<button 	onClick={test}>{props.ability}</button>
-    </div>
-  )
+	return(
+		<div>
+		<p> Mana : {props.mana}</p>
+		</div>
+	)
 }
-export default BattleCalcus
+export default BattleCalcus;

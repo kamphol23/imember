@@ -9,23 +9,23 @@ class  AddNewHeroToDatabase extends Component {
                 {name: 'Healing Potion', amout: 1 , cost: 10, sellPrice: 5 },
                 {name:'Mana Potion', amout: 1 , cost: 10, sellPrice: 5}],
         Staff:[
-                {abilityOne:'Basic attack', dmg: 5, manaCost: +5 },
-                {abilityTwo:'Fire ball', dmg: 15, manaCost: 20},
-                {abilityThree:'pyroblast', dmg: 50, manaCost:100}
+                {ability:'Basic attack', dmg: 5, manaCost: +5 },
+                {ability:'Fire ball', dmg: 15, manaCost: 20},
+                {ability:'pyroblast', dmg: 50, manaCost:100}
             ],
          LongSword:[
-                {abilityOne:'Basic attack', dmg: 5, manaCost: +5 },
-                {abilityTwo:'Heroic strike', dmg: 15, manaCost: 20 },
-                {abilityThree: 'Mortal strike', dmg: 50, manaCost:100}
+                {ability:'Basic attack', dmg: 5, manaCost: +5 },
+                {ability:'Heroic strike', dmg: 15, manaCost: 20 },
+                {ability: 'Mortal strike', dmg: 50, manaCost:100}
             ],
          BrokenCoockingRod:[
-                {abilityOne:'Basic attack', dmg: 5, manaCost: +5 },
-                {abilityTwo: 'Flying meatball', dmg: 15, manaCost: 20},
-                {abilityThree:'Momspaghetti', dmg: 50, manaCost:100}],
+                {ability:'Basic attack', dmg: 5, manaCost: +5 },
+                {ability: 'Flying meatball', dmg: 15, manaCost: 20},
+                {ability:'Momspaghetti', dmg: 50, manaCost:100}],
          DiscoStick:[
-                {abilityOne:'Basic attack', dmg: 5, manaCost: +5 }
-                ,{abilityTwo:'Last order', dmg: 15, manaCost: 20},
-                {abilityThree: 'Saturday night fever', dmg: 50, manaCost:100}
+                {ability:'Basic attack', dmg: 5, manaCost: +5 }
+                ,{ability:'Last order', dmg: 15, manaCost: 20},
+                {ability: 'Saturday night fever', dmg: 50, manaCost:100}
             ],
      }
 
@@ -47,7 +47,7 @@ handleAdd = e => {
       let db = firebase.firestore();
      db.collection('JHKmw250cal').doc(this.props.newHeroname).set({'heroName':this.props.newHeroname,
    'race':this.props.heroRace, 'inventory': this.state.bag, 'lvel': 1, 'health': 75, 'score' : 0,'wapon': this.props.heroWapon,
-    'waponAbilitis' : waponAbilitis,'expToNextLvl': 200, 'gold': 0 })
+    'waponAbilitis' : waponAbilitis,'expToNextLvl': 200, 'gold': 0, 'mana': 100 })
 		.then(() => {
 
 		})

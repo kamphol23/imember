@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import EnemyCalcus from '../battleCalcus/EnemyCalcus'
 class MonsterGenerator extends Component{
 	state = {
 		normalmods:[
@@ -24,14 +25,11 @@ class MonsterGenerator extends Component{
 
 		return(
 			<div>
-			<h3> Enemy : {this.state.normalmods[this.state.monsterNr].name}</h3>
-			<span> HP : {monsterHpMulityplaier}</span>
-			<ul> Abilitis
-			<li>A one : {this.state.normalmods[this.state.monsterNr].abilityOne}</li>
-			<li>A two : {this.state.normalmods[this.state.monsterNr].abilityTwo}</li>
-			<li>A three : {this.state.normalmods[this.state.monsterNr].abilityThree}</li>
-			 </ul>
-
+				<h3> Enemy {this.state.normalmods[this.state.monsterNr].name}</h3>
+				<EnemyCalcus enemyHealth={monsterHpMulityplaier}/>
+				<p> First ability :{this.state.normalmods[this.state.monsterNr].abilityOne}</p>
+				<p> Second ability : {this.state.normalmods[this.state.monsterNr].abilityTwo}</p>
+				<p> Third ability :{this.state.normalmods[this.state.monsterNr].abilityThree}</p>
 			</div>
 		)
 	}
