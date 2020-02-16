@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import EnemyCalcus from '../battleCalcus/EnemyCalcus'
+
 class MonsterGenerator extends Component{
 	state = {
 		normalmods:[
@@ -11,6 +11,7 @@ class MonsterGenerator extends Component{
 	}
 	componentDidMount(){
 		this.randomNr()
+
 	}
 
 	randomNr = () =>{
@@ -19,17 +20,17 @@ class MonsterGenerator extends Component{
 		}
 
 	render(){
-		let monsterHpMulityplaier = this.state.normalmods[this.state.monsterNr].health * this.props.playerLevel;
+				let monsterHpMulityplaier  = this.state.normalmods[this.state.monsterNr].health * this.props.playerLevel;
 
 
 
 		return(
 			<div>
 				<h3> Enemy {this.state.normalmods[this.state.monsterNr].name}</h3>
-				<EnemyCalcus enemyHealth={monsterHpMulityplaier}/>
-				<p> First ability :{this.state.normalmods[this.state.monsterNr].abilityOne}</p>
-				<p> Second ability : {this.state.normalmods[this.state.monsterNr].abilityTwo}</p>
-				<p> Third ability :{this.state.normalmods[this.state.monsterNr].abilityThree}</p>
+				<p> HP : {monsterHpMulityplaier - this.props.playerAttack} </p>
+				<p> First ability : {this.state.normalmods[this.state.monsterNr].abilityOne}</p>
+				<p> Second ability :  {this.state.normalmods[this.state.monsterNr].abilityTwo}</p>
+				<p> Third ability : {this.state.normalmods[this.state.monsterNr].abilityThree}</p>
 			</div>
 		)
 	}

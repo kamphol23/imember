@@ -1,15 +1,16 @@
-import React, {useEffect} from 'react'
-import PlayerCalus from '../battleCalcus/PlayerCalus'
+import React from 'react'
 const PlayerAbilitys = (props) =>{
 	const ability = props.ability
 	const manaCost = ability.manaCost
 
-const subMana = () => {
+
+const eventHandler = () => {
 	props.subMana(manaCost)
+	props.playerAttack(ability.dmg);
 }
 
-
-	let showAbility = (<button onClick={subMana}>	<strong>{ability.ability}</strong>
+	let showAbility = (<button onClick={eventHandler}>
+		<strong>{ability.ability}</strong>
 		<br/>
 		damage : {ability.dmg}
 		<br/>

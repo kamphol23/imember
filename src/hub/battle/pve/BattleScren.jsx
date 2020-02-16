@@ -33,19 +33,15 @@ const BattleScren = (props) =>{
 	});
   }, [])
 
-  function subMana(x){
-	  setManaData(manaData - x)
-  }
+
 
 	return(
 		<div>
 		<h2> PVE </h2>
-		<Player playerName={heroName} playerLevel={lvelData}
+		<BattleCalcus playerName={heroName} playerLevel={lvelData}
 		expToNextLvl={expToNextLvlData} wapon={waponData} abilitisData={abilitisData}	health={hpData}
 		 mana={manaData}
 		/>
-		<BattleCalcus  mana={manaData}/>
-		<MonsterGenerator playerLevel={lvelData} />
     	<button ><Link to={{pathname:'/SelectScren',state:{heroName:heroName}}}> Back </Link></button>
 		</div>
 	)
