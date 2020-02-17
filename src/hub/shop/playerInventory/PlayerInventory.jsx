@@ -8,9 +8,9 @@ const PlayerInventory = (props) =>{
   const [inventoryItemData, setInventoryItemdata] = useState(null);
   const [goldData, setGoldData] = useState(null)
   let inventoryItems = null;
+    useEffect (() =>{
       const db = firebase.firestore();
       const inventory = db.collection('JHKmw250cal').doc(heroName);
-        useEffect (() =>{
           inventory.onSnapshot(doc => {
             const data = doc.data();
               setInventoryItemdata(data.inventory);
@@ -23,9 +23,6 @@ const PlayerInventory = (props) =>{
       items => (<DisplayPlayerInventory key={items.name} items={items} heroName={heroName}/>)
     )
       }
-
-
-
   return(
     <div>
       <h1> player </h1>

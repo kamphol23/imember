@@ -4,20 +4,17 @@ import 'firebase/firestore';
 const SellItems = (props) => {
   const item = props.items;
   const playerName = props.heroName;
+  let playerGold = props.gold + props.sellPrice;
 
-  const deleteItem = () => {
-    firebase.firestore().collection('JHKmw250cal').doc(playerName).update({
-      inventory: this.FieldValue.arrayRemove(item.name)
-  })
-}
-  // const addGold = () =>{
-  // firebase.firestore().collection('JHKmw250cal').doc(playerName).set({ })
-  // }
+
+  const addGold = () =>{
+  firebase.firestore().collection('JHKmw250cal').doc(playerName).set({playerGold})
+  }
 
 
   return(
     <div>
-    <button onClick={deleteItem}> Sell </button>
+    <button onClick={addGold}> Sell </button>
     </div>
   )
 }

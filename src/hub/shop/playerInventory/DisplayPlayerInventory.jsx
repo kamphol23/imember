@@ -6,7 +6,8 @@ const DisplayPlayerInventory = (props) =>{
     return(
       <div>
       <p>{items.name} x {items.amout}</p>
-      <SellItems item={items} heroName={props.heroName}/>
+      <SellItems item={items} heroName={props.heroName} gold={items.gold}
+      sellPrice={items.sellPrice}/>
       </div>
     )
 }
