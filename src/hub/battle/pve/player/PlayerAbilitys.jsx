@@ -1,11 +1,35 @@
 import React from 'react'
-import BattleCalcus from './../battleCalcus/BattleCalcus'
 const PlayerAbilitys = (props) =>{
+	const ability = props.ability
+	const manaCost = ability.manaCost
+
+
+const eventHandler = () => {
+	props.subMana(manaCost)
+	props.playerAttack(ability.dmg);
+}
+
+	let showAbility = (<button onClick={eventHandler}>
+		<strong>{ability.ability}</strong>
+		<br/>
+		damage : {ability.dmg}
+		<br/>
+		mana cost : {manaCost}</button>)
+
+
+	if(manaCost > props.mana){
+		showAbility = (<button disabled = 'ture'>
+		<strong>{ability.ability}</strong>
+		<br/>
+		damage : {ability.dmg}
+		<br/>
+		mana cost : {manaCost}
+		</button>)
+	}
 
 	return(
 		<div className={props.ability}>
-		<BattleCalcus ability={props.ability}/>
-
+		{showAbility}
 		</div>
 	)
 }

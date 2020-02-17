@@ -3,7 +3,7 @@ import '../CreateCharacter.css'
 
 class NewCaharacterWapon extends Component {
   state = {
-    starterWapon: ['Staff', 'Long Sword', 'broken coocking rod', 'Disco stick'],
+    starterWapon: ['Staff', 'Long sword', 'Broken coocking rod', 'Disco stick'],
     waponAbilitis:[
     {
       Staff:{abilityOne: 'Basic attack', abilityTwo :'Fire ball', abilityThree : 'pyroblast'}
@@ -22,7 +22,7 @@ class NewCaharacterWapon extends Component {
   }
 
   componentDidMount(){
-  this.props.chosenWapon('Staff')
+  this.props.nameOfTheWapon('Staff')
   }
 
   prevWapon = () => {

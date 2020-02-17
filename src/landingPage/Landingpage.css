@@ -1,0 +1,25 @@
+.LandingPage{
+	margin: auto;
+	background-color: white;
+	height: 650px;
+	width: 550px;
+	border: solid gold 2px;
+	border-radius: 5px 5px;
+	justify-content: center;
+	display: flex;
+}
+
+.innerWrapper{
+	margin: auto;
+	text-align: center;
+}
+
+
+.app{
+  background-image: url('../picture/backgrund.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 790px;
+  justify-content: center;
+  display: flex;
+}
