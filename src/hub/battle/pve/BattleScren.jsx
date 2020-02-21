@@ -5,6 +5,7 @@ import {Link } from "react-router-dom";
 import MonsterGenerator from './Monster/MonsterGenerator'
 import Player from './player/Player';
 import BattleCalcus from './battleCalcus/BattleCalcus'
+import './Pve.css'
 const BattleScren = (props) =>{
 	const heroName = props.location.state.heroName;
 	const [lvelData, setLvelData] = useState(null);
@@ -36,13 +37,13 @@ const BattleScren = (props) =>{
 
 
 	return(
-		<div>
+		<div className="arena">
 		<h2> PVE </h2>
-		<BattleCalcus playerName={heroName} playerLevel={lvelData}
+		<BattleCalcus playerName={props.location.state.heroName} playerLevel={lvelData}
 		expToNextLvl={expToNextLvlData} wapon={waponData} abilitisData={abilitisData}	health={hpData}
 		 mana={manaData}
 		/>
-    	<button ><Link to={{pathname:'/SelectScren',state:{heroName:heroName}}}> Back </Link></button>
+    	<button className="pveBack" ><Link to={{pathname:'/SelectScren',state:{heroName:heroName}}}> Back </Link></button>
 		</div>
 	)
 }

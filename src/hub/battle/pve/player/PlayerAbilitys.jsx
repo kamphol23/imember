@@ -4,10 +4,15 @@ const PlayerAbilitys = (props) =>{
 	const manaCost = ability.manaCost
 
 
-const eventHandler = () => {
-	props.subMana(manaCost)
-	props.playerAttack(ability.dmg);
-}
+	const eventHandler = () => {
+		props.subMana(manaCost)
+		props.playerAttack(ability.dmg);
+	
+	}
+
+
+
+
 
 	let showAbility = (<button onClick={eventHandler}>
 		<strong>{ability.ability}</strong>

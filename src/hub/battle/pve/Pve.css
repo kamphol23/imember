@@ -1,0 +1,15 @@
+.arena{
+  background-image: url('https://eztic.files.wordpress.com/2015/09/backgroundarenablue2.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  display: flex;
+  height: -webkit-fill-available;
+}
+
+.pveBack{
+  position: absolute;
+    bottom: 10px;
+    right: 50px;
+}

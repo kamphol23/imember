@@ -9,11 +9,14 @@ const BattleMath = (props) => {
 
       useEffect (() =>{
           setEnemyHp(enemyHp - props.playerAttack )
-          enemeyTunrToattack();
+          enemeyTunrToattack()
+
       }, [props.playerAttack])
 
     const enemeyTunrToattack = () => {
       	let x = Math.floor((Math.random() * 3) + 0);
+
+       setTimeout( () => {
 
           if(x === 0){
             props.playerGetAttack(props.enemy.abilityOne.dmg)
@@ -25,8 +28,8 @@ const BattleMath = (props) => {
               props.playerGetAttack(props.enemy.abilityThree.dmg)
               console.log(props.enemy.name, 'used', props.enemy.abilityThree.name, 'and did', props.enemy.abilityThree.dmg, 'damage to you' );
           }
-
-
+        }
+        , 2000);
 
     }
 
