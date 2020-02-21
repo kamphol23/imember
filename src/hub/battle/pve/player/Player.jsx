@@ -7,7 +7,6 @@ const Player = (props) => {
 	const wapon = props.wapon;
 	let abilitisList = null;
 
-
 	return(
 		<div >
 			<h3> Hero name : {playerName}</h3>

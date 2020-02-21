@@ -7,14 +7,8 @@ class PushNewUserToDatabase extends Component{
 
   handleAdd = e => {
   		let obj = { userName: this.props.logInName};
-  		const collectionRef = firebase.firestore().collection(this.props.password);
-  		collectionRef.add(obj)
-  		.then(() => {
+      firebase.firestore().collection(this.props.password).doc('userName').set({userName: this.props.logInName});
 
-  		})
-  		.catch(error => {
-
-  		})
   	};
 
     eventHandler = () =>{

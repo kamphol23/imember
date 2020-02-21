@@ -1,6 +1,6 @@
 .LandingPage{
 	margin: auto;
-	background-color: white;
+	background-color: #F2D28D;
 	height: 650px;
 	width: 550px;
 	border: solid gold 2px;
@@ -16,10 +16,11 @@
 
 
 .app{
-  background-image: url('../picture/backgrund.gif');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 790px;
-  justify-content: center;
-  display: flex;
+background-image: url('../picture/backgrund.gif');
+height: -webkit-fill-available;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+justify-content: center;
+display: flex;
 }

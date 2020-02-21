@@ -21,7 +21,7 @@ font-size: 14px;
     text-align: center;
     justify-content: center;
     margin: auto;
-    background-color: white;
+    background-color: #F2D28D;
     padding: 100px;
     height: 300px;
     border: solid gold 2px;
@@ -34,10 +34,11 @@ font-size: 14px;
 }
 
 .App{
+    height: -webkit-fill-available;
   background-image: url('./picture/backgrund.gif');
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 790px;
   justify-content: center;
   display: flex;
 }

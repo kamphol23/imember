@@ -21,6 +21,8 @@ const Inventory = (props) =>{
             setLvelData(data.lvel);
             });
         }, [])
+
+
     return(
       <div>
       <p> you inventory</p>

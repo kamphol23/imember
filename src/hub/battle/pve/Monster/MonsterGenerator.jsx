@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-
+import BattleMath from './../battleCalcus/BattleMath'
 class MonsterGenerator extends Component{
 	state = {
 		normalmods:[
-			{name: 'Crow', abilityOne: 'Bite', abilityTwo: 'Dive', abilityThree: 'Screech', health: 100},
-			{name: 'Wolf', abilityOne: 'Bite', abilityTwo: 'Howl', abilityThree: 'Rend', health: 100},
-			{name: 'RottenRot', abilityOne: 'Rotten cone', abilityTwo: 'Rot whip', abilityThree: 'Overgrow', health: 100},
-			{name: 'Bandits', abilityOne: 'Punch', abilityTwo: 'Stab', abilityThree: 'Pick pocket', health: 100} ],
+			{name: 'Crow', abilityOne:{ name:'Bite', dmg: 8 }, abilityTwo:{name:'Dive', dmg: 18}, abilityThree:{name: 'Screech', dmg: 50}, health: 100},
+			{name: 'Wolf', abilityOne:{name: 'Bite', dmg: 8 }, abilityTwo:{name: 'Howl', dmg: 18}, abilityThree:{name:'Rend', dmg: 50}, health: 100},
+			{name: 'RottenRot', abilityOne:{name:'Rotten cone', dmg: 8}, abilityTwo: {name: 'Rot whip', dmg: 18}, abilityThree:{name: 'Overgrow', dmg: 50}, health: 100},
+			{name: 'Bandits', abilityOne:{name: 'Punch', dmg: 8}, abilityTwo:{name: 'Stab', dmg: 18}, abilityThree:{name:'Pick pocket', dmg: 50}, health: 100} ],
 			monsterNr: 0
 	}
 	componentDidMount(){
@@ -21,16 +21,17 @@ class MonsterGenerator extends Component{
 
 	render(){
 				let monsterHpMulityplaier  = this.state.normalmods[this.state.monsterNr].health * this.props.playerLevel;
-
+				let enemy = this.state.normalmods[this.state.monsterNr];
 
 
 		return(
 			<div>
-				<h3> Enemy {this.state.normalmods[this.state.monsterNr].name}</h3>
-				<p> HP : {monsterHpMulityplaier - this.props.playerAttack} </p>
-				<p> First ability : {this.state.normalmods[this.state.monsterNr].abilityOne}</p>
-				<p> Second ability :  {this.state.normalmods[this.state.monsterNr].abilityTwo}</p>
-				<p> Third ability : {this.state.normalmods[this.state.monsterNr].abilityThree}</p>
+				<h3> Enemy {enemy.name}</h3>
+				<BattleMath  {...this.props} enemyHp={monsterHpMulityplaier} playerAttack={ this.props.playerAttack} enemy={enemy}/>
+				<p> First ability : {enemy.abilityOne.name}</p>
+				<p> Second ability :  {enemy.abilityTwo.name}</p>
+				<p> Third ability : {enemy.abilityThree.name}</p>
+
 			</div>
 		)
 	}

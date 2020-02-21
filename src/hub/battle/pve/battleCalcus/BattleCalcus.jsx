@@ -4,9 +4,9 @@ import PlayerAbilitys from '../player/PlayerAbilitys'
 import MonsterGenerator from '../Monster/MonsterGenerator'
 const BattleCalcus = (props) =>{
 	const [manaData, setManaData] = useState(null)
-	const [playerHp, setPlayerHp] = useState(null)
+	const [playerHpData, setPlayerHpData] = useState(null)
 	const [playerDmg, setPlayerDmg] = useState(null)
-
+	const [isPlayerTurn, setIsPlayer] = useState(true)
 	let abilitisList = null;
 
 
@@ -17,7 +17,7 @@ const BattleCalcus = (props) =>{
 
 	useEffect (() =>{
 		setManaData(props.mana)
-		setPlayerHp(props.health)
+		setPlayerHpData(props.health)
 	}, [props.mana])
 
 
@@ -29,13 +29,18 @@ const BattleCalcus = (props) =>{
 		setPlayerDmg(dmg);
 	}
 
+	const enemyAttack = (x) => {
+		setPlayerHpData(playerHpData - x )
+	}
+
+
 	return(
 		<div>
 		<Player playerName={props.heroName} playerLevel={props.playerLevel}
-		expToNextLvl={props.expToNextLvl} wapon={props.wapon} health={playerHp} mana={manaData}/>
+		expToNextLvl={props.expToNextLvl} wapon={props.wapon} health={playerHpData} mana={manaData}/>
 		{abilitisList}
 
-		<MonsterGenerator playerLevel={props.playerLevel} playerAttack={playerDmg}/>
+		<MonsterGenerator playerLevel={props.playerLevel} playerAttack={playerDmg} playerGetAttack={enemyAttack.bind(this)}/>
 		</div>
 	)
 }

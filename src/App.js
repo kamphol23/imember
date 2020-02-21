@@ -29,10 +29,10 @@ render(){
 
   return (
     <Router>
-    <div>
+    <div >
     <Route path="/" exact render={
       () => {
-        return (<div  className="App">
+        return (<div className="App">
             <div className="landningWrapper">
             <h1> I MEMEBER</h1>
             <button className="welcome" onClick={(e) => this.setState({display: false,loggedInStatus: true })}><Link to="/LandingPage"> Welcome!</Link></button>
